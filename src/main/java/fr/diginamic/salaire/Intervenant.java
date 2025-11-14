@@ -1,0 +1,24 @@
+package fr.diginamic.salaire;
+
+public abstract class Intervenant
+{
+    String nom;
+    String prenom;
+
+    public Intervenant(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
+    public abstract String statut();
+
+    public void afficherDonnees()
+    {
+        System.out.println("nom : " + nom);
+        System.out.println("prenom : " + prenom);
+        System.out.println("salaire : " + getSalaire());
+        System.out.println("statut : " + statut());
+    }
+
+    public abstract double getSalaire();
+}
