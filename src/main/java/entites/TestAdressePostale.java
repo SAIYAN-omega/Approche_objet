@@ -7,23 +7,20 @@ public class TestAdressePostale
 {
     public static void main(String[] args)
     {
-        adressePostale adrr1 = new adressePostale();
-        adressePostale adrr2 = new adressePostale();
-        Personne Client = new Personne();
 
-        adrr1.CodePostal = 34660;
-        adrr1.LibelleRue = "12 rue bg";
-        adrr1.numeroDeRue = 15;
-        adrr1.Ville = "Montpellier";
+        AdressePostale adrr1 = new AdressePostale(15,"12 rue bg",34660,"Montpellier");
+        Personne Client1 = new Personne("Vidal","Thomas");
+        Personne Client = new Personne("Vidal","Thomas",adrr1);
 
-        adrr2.CodePostal = 34660;
-        adrr2.LibelleRue = "12 rue bg";
-        adrr2.numeroDeRue = 15;
-        adrr2.Ville = "Montpellier";
+        Client.sePresenter();
 
-        Client.Prenom = "Thomas";
-        Client.Nom = "Vidal";
-        Client.adresse = new adressePostale();
+        Client.setNom("dupond");
+        Client.setPrenom("bernard");
+        Client.setAdresse(adrr1);
+
+        Client.sePresenter();
+
+        System.out.println("Je m appelle " + Client.getPrenom() + " " + Client.getNom().toUpperCase());
 
     }
 }
